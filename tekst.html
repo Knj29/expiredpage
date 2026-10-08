@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>STRONA WYGASA</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f0f0f;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+    color: #ff4444;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  a {
+    color: #4da3ff;
+    word-break: break-all;
+    font-size: 1.1rem;
+  }
+  .box {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px 30px;
+    max-width: 800px;
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>STRONA WYGASA</h1>
+    <p>Przenieś się na nową stronę:</p>
+    <p><a id="newLink" href="#">...</a></p>
+  </div>
+
+<script>
+  // Pobieramy aktualny query string (wszystko po "?" w URL)
+  const query = window.location.search;
+
+  // Nowy adres bazowy
+  const newBase = "https://knj29.github.io/";
+
+  // Budujemy pełny nowy link (baza + ten sam query string)
+  const newUrl = newBase + query;
+
+  const linkEl = document.getElementById("newLink");
+  linkEl.href = newUrl;
+  linkEl.textContent = newUrl;
+</script>
+</body>
+</html>
